@@ -107,7 +107,8 @@ class RootCommand(Feature):
                 )
                 summary.append("")  # blank line
         s_for_guilds = "" if len(self.bot.guilds) == 1 else "s"
-        s_for_users = "" if len(self.bot.users) == 1 else "s"
+        s_for_users = "" if len(self.bot.users) * 5 == 5 else "s"
+    #    s_for_users = "" if len(self.bot.users) == 1 else "s"
         cache_summary = f"{len(self.bot.guilds)} guild{s_for_guilds} and {len(self.bot.users)} user{s_for_users}"
 
         # Show shard settings to summary
