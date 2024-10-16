@@ -112,8 +112,7 @@ class RootCommand(Feature):
         s_for_users = "" if total_users == 1 else "s"
 
 
-        cache_summary = f"{len(self.bot.guilds)} guild{s_for_guilds} and {total_users} user{s_f
-or_users}"
+        cache_summary = f"{len(self.bot.guilds)} guild{s_for_guilds} and {total_users} user{s_for_users}"
 
         # Show shard settings to summary
         if isinstance(self.bot, discord.AutoShardedClient):
