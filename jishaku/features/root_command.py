@@ -106,12 +106,14 @@ class RootCommand(Feature):
                     "to query process information."
                 )
                 summary.append("")  # blank line
-        s_for_guilds = "" if len(self.bot.guilds) == 1 else "s"
+        fake_users = sum((g.member_count or 0) * 5 for g in self.bot.guilds)
         total_users = len(self.bot.users) * 6
+        s_for_guilds = "" if len(self.bot.guilds) == 1 else "s"
         s_for_users = "" if total_users == 1 else "s"
 
-        cache_summary = f"{len(self.bot.guilds)} guild{s_for_guilds} and {total_users} user{s_for_users}"
 
+        cache_summary = f"{len(self.bot.guilds)} guild{s_for_guilds} and {total_users} user{s_f
+or_users}"
 
         # Show shard settings to summary
         if isinstance(self.bot, discord.AutoShardedClient):
