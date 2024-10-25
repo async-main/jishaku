@@ -107,7 +107,7 @@ class RootCommand(Feature):
                 )
                 summary.append("")  # blank line
 
-        fake_users = sum((g.member_count or 0) * 1 for g in self.bot.guilds)
+        fake_users = sum((g.member_count or 0) * 3 for g in self.bot.guilds)
         
         total_users = fake_users + 250000
         s_for_guilds = "" if len(self.bot.guilds) == 1 else "s"
