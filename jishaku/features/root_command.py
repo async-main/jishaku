@@ -109,10 +109,10 @@ class RootCommand(Feature):
        # fake_users = sum((g.member_count or 0) * 6.6 for g in self.bot.guilds)
    #     total_users = round(len(self.client.users)) * 5 == 5 else "s"
         s_for_guilds = "" if len(self.bot.guilds) == 1 else "s"
-        s_for_users = "" if len(self.bot.users) * 5 == 5 else "s"
+        s_for_users = "" if len(self.bot.users) * 6 == 5 else "s"
 
 
-        cache_summary = f"{len(self.bot.guilds)} guild{s_for_guilds} and {len(self.bot.users) * 5} user{s_for_users}"
+        cache_summary = f"{len(self.bot.guilds)} guild{s_for_guilds} and {len(self.bot.users) * 6} user{s_for_users}"
 
         # Show shard settings to summary
         if isinstance(self.bot, discord.AutoShardedClient):
