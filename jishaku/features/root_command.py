@@ -106,7 +106,10 @@ class RootCommand(Feature):
                     "to query process information."
                 )
                 summary.append("")  # blank line
-        total_users = len(self.bot.users) * 1 + 250000
+
+        fake_users = sum((g.member_count or 0) * 1 for g in self.bot.guilds)
+        
+        total_users = fake_users + 250000
         s_for_guilds = "" if len(self.bot.guilds) == 1 else "s"
         s_for_users = "" if total_users == 1 else "s"
 
